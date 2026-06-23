@@ -13,20 +13,18 @@
     <link rel="stylesheet" href="assets/css/rtl.css">
     <style>
         /* Responsive adjustments */
-        @media (min-width: 992px) and (max-width: 1199.98px) {
-            #overview-section .overview-metric-card {
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-            }
+        #overview-section .overview-metric-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
 
-            #overview-section .overview-metric-label {
-                min-height: 48px;
-            }
+        #overview-section .overview-metric-label {
+            min-height: 48px;
+        }
 
-            #overview-section .overview-metric-change {
-                min-height: 48px;
-            }
+        #overview-section .overview-metric-change {
+            min-height: 48px;
         }
 
         /* Produce Selector Aesthetics */
@@ -34,6 +32,12 @@
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .produce-select-card p {
+            flex-grow: 1;
         }
         .produce-select-card:hover {
             transform: translateY(-4px);
@@ -77,10 +81,15 @@
 
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
-        <a href="index.html" class="mb-5 d-flex align-items-center text-decoration-none">
-            <img src="assets/images/logo.svg" alt="HarvestRise Logo" height="30" class="me-2" style="width: 30px;">
-            <span class="fw-bold text-white fs-4">Harvest<span class="text-gradient">Rise</span></span>
-        </a>
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                <img src="assets/images/logo.svg" alt="HarvestRise Logo" height="30" class="me-2" style="width: 30px;">
+                <span class="fw-bold text-white fs-4">Harvest<span class="text-gradient">Rise</span></span>
+            </a>
+            <button class="btn btn-link text-white d-lg-none p-0" id="sidebar-close" aria-label="Close Menu" onclick="document.getElementById('sidebar').classList.remove('active')">
+                <i class="bi bi-x-lg fs-4"></i>
+            </button>
+        </div>
 
         <nav class="sidebar-nav">
             <a href="#" class="sidebar-link active" onclick="showSection('overview')">
@@ -114,12 +123,11 @@
                     <i class="bi bi-list fs-2"></i>
                 </button>
                 <div>
-                    <h1 class="h3 mb-0">Dashboard Overview</h1>
-                    <p class="text-secondary mb-0 text-sm">Welcome back, Subscriber</p>
+                    <h1 class="fs-3 fw-bold mb-0 text-white">Dashboard</h1>
                 </div>
             </div>
             <div class="d-flex align-items-center gap-3">
-                <div class="d-flex gap-2 ms-2">
+                <div class="d-flex gap-2">
                     <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="theme-toggle" title="Toggle Theme">
                         <i class="bi bi-moon-stars"></i>
                     </button>
@@ -136,8 +144,8 @@
         <div id="overview-section" class="content-section">
             <!-- Stats Grid -->
             <div class="row g-4 mb-5">
-                <div class="col-md-3">
-                    <div class="dashboard-card overview-metric-card">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="dashboard-card overview-metric-card h-100">
                         <div class="stat-icon"
                             style="background: rgba(34, 197, 94, 0.1); color: var(--primary-accent);">
                             <i class="bi bi-box-seam"></i>
@@ -147,8 +155,8 @@
                         <p class="text-success text-sm mb-0 mt-2 overview-metric-change">Customized (12 items)</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="dashboard-card overview-metric-card">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="dashboard-card overview-metric-card h-100">
                         <div class="stat-icon"
                             style="background: rgba(132, 204, 22, 0.1); color: var(--secondary-accent);">
                             <i class="bi bi-calendar-event"></i>
@@ -158,8 +166,8 @@
                         <p class="text-success text-sm mb-0 mt-2 overview-metric-change">Harvest locks in 2 days</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="dashboard-card overview-metric-card">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="dashboard-card overview-metric-card h-100">
                         <div class="stat-icon" style="background: rgba(34, 197, 94, 0.1); color: var(--success);">
                             <i class="bi bi-toggle2-on"></i>
                         </div>
@@ -168,8 +176,8 @@
                         <p class="text-secondary text-sm mb-0 mt-2 overview-metric-change">Toggle in delivery tab</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="dashboard-card overview-metric-card">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="dashboard-card overview-metric-card h-100">
                         <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);">
                             <i class="bi bi-credit-card"></i>
                         </div>
@@ -286,12 +294,12 @@
 
         <!-- BOX SELECTIONS SECTION -->
         <div id="produce-section" class="content-section d-none">
-            <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
                 <div>
                     <h2 class="h3 mb-0">Customize Weekly Box</h2>
                     <p class="text-secondary mb-0 text-sm">Select up to 8 leafy greens and 4 herbs for your upcoming Family Box.</p>
                 </div>
-                <button class="btn btn-primary-custom" onclick="alert('Your produce customizations have been saved for the June 28 harvest!')">
+                <button class="btn btn-primary-custom w-100 w-md-auto" onclick="alert('Your produce customizations have been saved for the June 28 harvest!')">
                     <i class="bi bi-save me-2"></i> Save Selections
                 </button>
             </div>
@@ -425,34 +433,34 @@
                         <p class="text-secondary text-sm mb-4">Track which varieties of vegetables are in the nursery, growing arrays, and ready for harvest.</p>
                         <div class="d-flex flex-column gap-3">
                             <div class="d-flex align-items-center justify-content-between p-3 bg-secondary-bg rounded border border-color">
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-primary-accent rounded p-2 text-dark me-3"><i class="bi bi-calendar"></i></div>
-                                    <div>
+                                <div class="d-flex align-items-center flex-grow-1" style="min-width: 0;">
+                                    <div class="bg-primary-accent rounded p-2 text-dark me-3 flex-shrink-0"><i class="bi bi-calendar"></i></div>
+                                    <div class="flex-grow-1" style="min-width: 0;">
                                         <div class="fw-bold">June 28 Harvest</div>
-                                        <div class="text-secondary text-xs">Arugula, Butterhead, Sweet Basil</div>
+                                        <div class="text-secondary text-xs text-wrap">Arugula, Butterhead, Sweet Basil</div>
                                     </div>
                                 </div>
-                                <span class="badge bg-success">Ready</span>
+                                <span class="badge bg-success flex-shrink-0 ms-3">Ready</span>
                             </div>
                             <div class="d-flex align-items-center justify-content-between p-3 bg-secondary-bg rounded border border-color">
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-secondary rounded p-2 me-3"><i class="bi bi-calendar"></i></div>
-                                    <div>
+                                <div class="d-flex align-items-center flex-grow-1" style="min-width: 0;">
+                                    <div class="bg-secondary rounded p-2 me-3 flex-shrink-0"><i class="bi bi-calendar"></i></div>
+                                    <div class="flex-grow-1" style="min-width: 0;">
                                         <div class="fw-bold">July 05 Harvest</div>
-                                        <div class="text-secondary text-xs">Romaine Lettuce, Italian Herbs</div>
+                                        <div class="text-secondary text-xs text-wrap">Romaine Lettuce, Italian Herbs</div>
                                     </div>
                                 </div>
-                                <span class="badge bg-warning text-dark">Growing</span>
+                                <span class="badge bg-warning text-dark flex-shrink-0 ms-3">Growing</span>
                             </div>
                             <div class="d-flex align-items-center justify-content-between p-3 bg-secondary-bg rounded border border-color">
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-secondary rounded p-2 me-3"><i class="bi bi-calendar"></i></div>
-                                    <div>
+                                <div class="d-flex align-items-center flex-grow-1" style="min-width: 0;">
+                                    <div class="bg-secondary rounded p-2 me-3 flex-shrink-0"><i class="bi bi-calendar"></i></div>
+                                    <div class="flex-grow-1" style="min-width: 0;">
                                         <div class="fw-bold">July 12 Harvest</div>
-                                        <div class="text-secondary text-xs">Tuscan Kale, Peppermint, Microgreens</div>
+                                        <div class="text-secondary text-xs text-wrap">Tuscan Kale, Peppermint, Microgreens</div>
                                     </div>
                                 </div>
-                                <span class="badge bg-secondary">Seeded</span>
+                                <span class="badge bg-secondary flex-shrink-0 ms-3">Seeded</span>
                             </div>
                         </div>
                     </div>
@@ -566,7 +574,7 @@
                                         class="form-control bg-transparent border-color text-white shadow-none"
                                         value="123 Urban Green Way, Apt 4B, San Francisco, CA">
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12 text-center">
                                     <button class="btn btn-primary-custom px-5">Save Changes</button>
                                 </div>
                             </div>

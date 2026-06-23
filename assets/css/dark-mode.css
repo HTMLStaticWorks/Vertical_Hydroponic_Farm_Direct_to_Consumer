@@ -27,6 +27,10 @@ body.light-theme .nav-link.active {
     color: var(--secondary-accent) !important;
 }
 
+body.light-theme .nav-link::after {
+    background-color: var(--secondary-accent) !important;
+}
+
 body.light-theme .navbar-brand .text-white {
     color: #0F172A !important;
 }
@@ -166,8 +170,7 @@ body.light-theme .navbar-toggler i {
 /* Mobile/Tablet Menu Fix */
 @media (max-width: 1199.98px) {
     body.light-theme .navbar-custom .navbar-collapse {
-        background: rgba(248, 255, 250, 0.98);
-        border-color: rgba(0, 0, 0, 0.08);
+        background: rgba(248, 255, 250, 0.98) !important;
     }
 }
 

@@ -123,8 +123,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const rtlToggle = document.getElementById('rtl-toggle');
     const savedDir = localStorage.getItem('dir');
 
+    function applyBootstrapRTL(dir) {
+        const bootstrapLinks = document.querySelectorAll('link[href*="bootstrap.min.css"], link[href*="bootstrap.rtl.min.css"]');
+        bootstrapLinks.forEach(link => {
+            if (dir === 'rtl') {
+                if (link.href.includes('bootstrap.min.css')) {
+                    link.href = link.href.replace('bootstrap.min.css', 'bootstrap.rtl.min.css');
+                }
+            } else {
+                if (link.href.includes('bootstrap.rtl.min.css')) {
+                    link.href = link.href.replace('bootstrap.rtl.min.css', 'bootstrap.min.css');
+                }
+            }
+        });
+    }
+
     if (savedDir === 'rtl') {
         document.documentElement.setAttribute('dir', 'rtl');
+        applyBootstrapRTL('rtl');
     }
 
     if (rtlToggle) {
@@ -133,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
             document.documentElement.setAttribute('dir', newDir);
             localStorage.setItem('dir', newDir);
+            applyBootstrapRTL(newDir);
         });
     }
 
@@ -216,23 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
             activeLink.classList.add('active');
         }
 
-        // Update page title based on section
-        const titleMap = {
-            'overview': 'Dashboard Overview',
-            'subscription': 'My Subscription',
-            'produce': 'Produce Selection',
-            'delivery': 'Delivery Preferences',
-            'harvest': 'Harvest Schedule',
-            'orders': 'Order History',
-            'billing': 'Billing Information',
-            'notifications': 'Notifications',
-            'support': 'Customer Support',
-            'settings': 'Account Settings'
-        };
-        const pageTitle = document.querySelector('header h1.h3');
-        if (pageTitle && titleMap[sectionId]) {
-            pageTitle.textContent = titleMap[sectionId];
-        }
+
 
         // Close sidebar on mobile after selection
         if (window.innerWidth < 992 && sidebar.classList.contains('active')) {
@@ -243,12 +244,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Navbar Menu Scroll Lock and Auto-close
     const navbarCollapse = document.getElementById('navbarNav');
     if (navbarCollapse) {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const togglerIcon = navbarToggler ? navbarToggler.querySelector('i') : null;
+
         navbarCollapse.addEventListener('show.bs.collapse', () => {
             document.body.style.overflow = 'hidden';
+            if (togglerIcon) {
+                togglerIcon.classList.remove('bi-list');
+                togglerIcon.classList.add('bi-x-lg');
+            }
         });
         
         navbarCollapse.addEventListener('hidden.bs.collapse', () => {
             document.body.style.overflow = '';
+            if (togglerIcon) {
+                togglerIcon.classList.remove('bi-x-lg');
+                togglerIcon.classList.add('bi-list');
+            }
         });
 
         const navLinks = navbarCollapse.querySelectorAll('.nav-link');

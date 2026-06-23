@@ -52,6 +52,17 @@
         body:not(.light-theme) .badge.bg-primary-accent.text-dark {
             color: #ffffff !important;
         }
+
+        @media (width: 1024px) {
+            section.bg-secondary-bg .row.g-4 > .col-sm-6 {
+                display: flex;
+            }
+
+            section.bg-secondary-bg .row.g-4 > .col-sm-6 > .glass-card {
+                width: 100%;
+                height: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -107,8 +118,8 @@
                 <p class="text-secondary lead max-w-600 mx-auto mb-4 px-3">Choose a flexible weekly produce box size. Easily pause, skip, or cancel your subscription at any time.</p>
                 <div class="d-flex justify-content-center align-items-center gap-3 mb-5">
                     <span class="text-white">Weekly Billing</span>
-                    <div class="form-check form-switch p-0" style="width: 50px;">
-                        <input class="form-check-input ms-0 w-100 h-100 py-1" type="checkbox" id="billingSwitch"
+                    <div class="form-check form-switch p-0 m-0" style="width: 50px; height: 24px;">
+                        <input class="form-check-input ms-0 m-0 w-100 h-100" type="checkbox" id="billingSwitch" style="cursor: pointer;"
                             checked>
                     </div>
                     <span class="text-secondary">Monthly Pre-pay <span class="badge bg-primary-accent text-dark ms-2">Save 10%</span></span>
@@ -257,8 +268,8 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg"
                         height="25" alt="Stripe">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" height="25" alt="PayPal">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/320px-Visa_Inc._logo.svg.png" height="20"
-                        alt="Visa">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='24' viewBox='0 0 72 24'%3E%3Ctext x='0' y='18' font-family='Arial, Helvetica, sans-serif' font-size='18' font-weight='700' fill='%231A1F71'%3EVISA%3C/text%3E%3C/svg%3E"
+                        height="20" alt="Visa">
                 </div>
             </div>
         </div>

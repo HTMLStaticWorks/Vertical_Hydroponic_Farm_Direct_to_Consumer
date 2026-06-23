@@ -33,9 +33,17 @@
         .feature-icon i {
             font-size: 28px !important; /* exactly 50% of 56px */
             line-height: 1;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
         }
 
-        @media (max-width: 1024px) {
+        .feature-icon i::before {
+            vertical-align: 0 !important;
+            display: inline-block !important;
+        }
+
+        @media (width: 1024px) {
             html,
             body.home2-page {
                 width: 100%;
@@ -101,6 +109,14 @@
             body.home2-page section .d-flex.align-items-start .badge {
                 margin-right: 0 !important;
                 margin-bottom: 0.75rem;
+            }
+
+            body.home2-page #pricing-plans .row.align-items-stretch > [class*="col-"] {
+                display: flex;
+            }
+
+            body.home2-page #pricing-plans .row.align-items-stretch > [class*="col-"] > .glass-card {
+                width: 100%;
             }
         }
     </style>
@@ -191,7 +207,7 @@
     </section>
 
     <!-- Section 2: Interactive Features Grid -->
-    <section class="py-5 my-5">
+    <section id="revolutionary-features" class="py-5 my-5">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 mb-3">Revolutionary <span class="text-gradient">Features</span></h2>
@@ -328,25 +344,25 @@
                         <h3 class="h4 mb-4">Cultivation Focus</h3>
                         <div class="row g-3">
                             <div class="col-6 text-center">
-                                <div class="glass-card p-3 mb-3">
+                                <div class="glass-card p-3 h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 140px;">
                                     <i class="bi bi-flower1 fs-1 text-primary-accent mb-2 d-block"></i>
                                     <p class="small mb-0">Leafy Greens</p>
                                 </div>
                             </div>
                             <div class="col-6 text-center">
-                                <div class="glass-card p-3 mb-3">
+                                <div class="glass-card p-3 h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 140px;">
                                     <i class="bi bi-droplet-half fs-1 text-success mb-2 d-block"></i>
                                     <p class="small mb-0">Culinary Herbs</p>
                                 </div>
                             </div>
                             <div class="col-6 text-center">
-                                <div class="glass-card p-3 mb-3">
+                                <div class="glass-card p-3 h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 140px;">
                                     <i class="bi bi-sun fs-1 text-warning mb-2 d-block"></i>
                                     <p class="small mb-0">LED Growth Spectra</p>
                                 </div>
                             </div>
                             <div class="col-6 text-center">
-                                <div class="glass-card p-3 mb-3">
+                                <div class="glass-card p-3 h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 140px;">
                                     <i class="bi bi-thermometer-half fs-1 text-info mb-2 d-block"></i>
                                     <p class="small mb-0">Climate Control</p>
                                 </div>
@@ -434,7 +450,7 @@
     </section>
 
     <!-- Section 5: Subscriber Box Preview -->
-    <section class="py-5 bg-secondary-bg">
+    <section id="box-preview" class="py-5 bg-secondary-bg">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
@@ -514,13 +530,13 @@
     </section>
 
     <!-- Section 6: Subscription Plans -->
-    <section class="py-5 my-5">
+    <section id="pricing-plans" class="py-5 my-5">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 mb-3">Choose Your <span class="text-gradient">Plan</span></h2>
                 <p class="text-secondary max-w-600 mx-auto">Flexible produce box options designed to fit households of all sizes.</p>
             </div>
-            <div class="row g-4 align-items-center">
+            <div class="row g-4 align-items-stretch">
                 <div class="col-lg-4">
                     <div class="glass-card p-5 h-100 d-flex flex-column">
                         <div style="height: 40px;" class="mb-4"></div> <!-- Spacer -->
