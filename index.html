@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvestRise Hydroponics | Fresh Produce Delivered Weekly</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
+    <meta name="description"
+        content="Subscribe to fresh hydroponic produce delivered directly from our urban farm. Flexible produce boxes, transparent growing practices, and weekly harvest deliveries.">
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@10.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Using 5.3.0 since 10.0.0 is not a valid version -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.svg" alt="HarvestRise Logo" class="me-2" style="height: 32px; width: 32px;">
+                <span class="fw-bold text-white fs-4">Harvest<span class="text-gradient">Rise</span></span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list text-white fs-2"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Produce</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="dashboard.html" class="btn btn-outline-custom btn-sm d-flex align-items-center"
+                        title="Dashboard">
+                        <i class="bi bi-grid-fill"></i>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-custom btn-sm d-flex align-items-center" title="Login">
+                        Login
+                    </a>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="theme-toggle" title="Toggle Theme">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                        <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="rtl-toggle" title="RTL">
+                            RTL
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-center text-lg-start">
+        <div class="hero-glow"></div>
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <span class="badge bg-secondary-bg border border-color text-primary-accent mb-3 px-3 py-2 rounded-pill fw-bold text-uppercase tracking-wider"><i class="bi bi-tree-fill me-1"></i> Hyper-Local Vertical Farm</span>
+                    <h1 class="hero-title mb-4">
+                        Fresh Hydroponic <span class="text-gradient">Produce</span> <br> Delivered Every Week
+                    </h1>
+                    <p class="lead text-secondary mb-4 pe-lg-5">
+                        Build a healthier routine with pesticide-free, nutrient-rich greens harvested at peak maturity and delivered straight to your door within 24 hours.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="pricing.html" class="btn btn-primary-custom btn-lg px-4">Start Your Subscription</a>
+                        <a href="portfolio.html" class="btn btn-outline-custom btn-lg px-4">View Produce Boxes</a>
+                    </div>
+                    
+                    <div class="mt-5 pt-3 border-top border-color">
+                        <div class="row g-3">
+                            <div class="col-sm-4 col-6">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="rounded-circle bg-primary-accent opacity-10 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background: rgba(34, 197, 94, 0.1);">
+                                        <i class="bi bi-check text-primary-accent"></i>
+                                    </div>
+                                    <span class="text-secondary text-sm">Harvested &lt; 24h</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-6">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="rounded-circle bg-primary-accent opacity-10 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background: rgba(34, 197, 94, 0.1);">
+                                        <i class="bi bi-check text-primary-accent"></i>
+                                    </div>
+                                    <span class="text-secondary text-sm">Zero Pesticides</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="rounded-circle bg-primary-accent opacity-10 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background: rgba(34, 197, 94, 0.1);">
+                                        <i class="bi bi-check text-primary-accent"></i>
+                                    </div>
+                                    <span class="text-secondary text-sm">95% Water Saved</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5">
+                    <div class="position-relative ps-lg-4">
+                        <!-- Background blur glow -->
+                        <div class="position-absolute rounded-circle bg-primary-accent opacity-10" style="width: 250px; height: 250px; bottom: -20px; right: -20px; filter: blur(40px); z-index: 0;"></div>
+                        
+                        <!-- Main visual wrapper -->
+                        <div class="hero-mockup-wrapper float-animation rounded-4 overflow-hidden border border-color shadow-lg position-relative z-index-1">
+                            <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=800"
+                                alt="Fresh Harvest Box" class="img-fluid" style="height: 460px; width: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Core Services Section -->
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-4">
+                    <h2 class="display-5 mb-4">One Farm, <span class="text-gradient">Endless Freshness</span></h2>
+                    <p class="text-secondary mb-5">Everything you need to enjoy premium indoor vertical farming produce at home.</p>
+                    <a href="pricing.html" class="btn btn-primary-custom btn-lg">Subscribe Now</a>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="glass-card p-4 h-100">
+                                <div class="mb-3 fs-3 text-primary-accent border-bottom pb-2">01</div>
+                                <i class="bi bi-box-seam fs-2 text-gradient mb-3 d-block"></i>
+                                <h4 class="h5 mb-2 text-white">Weekly Produce</h4>
+                                <p class="text-secondary text-sm mb-0">Freshly harvested greens and herbs delivered in eco-friendly packaging.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="glass-card p-4 h-100">
+                                <div class="mb-3 fs-3 text-primary-accent border-bottom pb-2">02</div>
+                                <i class="bi bi-sliders fs-2 text-gradient mb-3 d-block"></i>
+                                <h4 class="h5 mb-2 text-white">Custom Builder</h4>
+                                <p class="text-secondary text-sm mb-0">Select your favorite leafy greens and seasonal crops each week prior to harvest.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="glass-card p-4 h-100">
+                                <div class="mb-3 fs-3 text-primary-accent border-bottom pb-2">03</div>
+                                <i class="bi bi-calendar-event fs-2 text-gradient mb-3 d-block"></i>
+                                <h4 class="h5 mb-2 text-white">Flexible Schedule</h4>
+                                <p class="text-secondary text-sm mb-0">Choose weekly or bi-weekly deliveries. Easily pause or skip anytime.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio/Showcase Section -->
+    <section class="py-5 bg-secondary-bg position-relative overflow-hidden">
+        <!-- Subtle background glow -->
+        <div class="position-absolute" style="width: 400px; height: 400px; background: radial-gradient(circle, rgba(34, 197, 94, 0.05) 0%, transparent 70%); top: 10%; left: -200px; pointer-events: none;"></div>
+        
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <!-- Left: Overlapping Image Gallery -->
+                <div class="col-lg-6">
+                    <div class="position-relative p-4">
+                        <!-- Background decoration circle -->
+                        <div class="position-absolute rounded-circle bg-primary-accent opacity-10" style="width: 300px; height: 300px; top: 0; left: 0; filter: blur(30px); z-index: 0;"></div>
+                        
+                        <!-- Main Image -->
+                        <div class="glass-card p-2 position-relative z-index-1" style="max-width: 85%; transform: rotate(-2deg); box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+                            <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=800"
+                                class="img-fluid rounded-4" alt="Vertical hydroponic towers" style="width: 100%; height: 350px; object-fit: cover;">
+                        </div>
+                        
+                        <!-- Floating Overlapping Image -->
+                        <div class="glass-card p-2 position-absolute" style="max-width: 55%; bottom: -20px; right: 0; z-index: 2; transform: rotate(3deg); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+                            <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=600"
+                                class="img-fluid rounded-4" alt="Fresh Basil cultivation" style="width: 100%; height: 220px; object-fit: cover;">
+                        </div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="glass-card px-4 py-3 position-absolute border-primary-accent" style="top: 20px; right: 20px; z-index: 3; background: rgba(15, 23, 42, 0.85); box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="fs-4 text-primary-accent fw-bold">95%</span>
+                                <span class="text-secondary text-xs" style="line-height: 1.2;">Water<br>Saved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content and Feature Blocks -->
+                <div class="col-lg-6">
+                    <span class="text-primary-accent text-uppercase tracking-wider small fw-bold mb-2 d-block">Premium Cultivation</span>
+                    <h2 class="section-title mb-4">Grown for <span class="text-gradient">Premium Freshness</span></h2>
+                    <p class="text-secondary mb-5">See how our vertical hydroponic farm delivers clean, pesticide-free greens directly to urban households.</p>
+                    
+                    <div class="d-flex flex-column gap-4 mb-5">
+                        <div class="glass-card p-4 hover-effect border-start border-3 border-primary-accent">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="fs-3 text-primary-accent"><i class="bi bi-droplet-fill"></i></div>
+                                <div>
+                                    <h4 class="h5 text-white mb-2">Controlled Growing Environments</h4>
+                                    <p class="text-secondary text-sm mb-0">Grown indoors under optimized LED arrays using 95% less water than traditional soil farming.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card p-4 hover-effect border-start border-3 border-primary-accent">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="fs-3 text-primary-accent"><i class="bi bi-truck"></i></div>
+                                <div>
+                                    <h4 class="h5 text-white mb-2">Harvested within 24 Hours</h4>
+                                    <p class="text-secondary text-sm mb-0">We harvest your greens at their nutritional peak and deliver them straight to your door within a day.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 hover-effect border-start border-3 border-primary-accent">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="fs-3 text-primary-accent"><i class="bi bi-shield-check"></i></div>
+                                <div>
+                                    <h4 class="h5 text-white mb-2">100% Pesticide-Free</h4>
+                                    <p class="text-secondary text-sm mb-0">Our sterile indoor grow environment eliminates the need for chemical pesticides or herbicides.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-3">
+                        <a href="portfolio.html" class="btn btn-outline-custom">View Produce Selection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By / Stats Section -->
+    <section class="py-5 position-relative overflow-hidden">
+        <!-- Glow accents -->
+        <div class="position-absolute" style="width: 500px; height: 500px; background: radial-gradient(circle, rgba(34, 197, 94, 0.03) 0%, transparent 70%); bottom: -250px; right: 10%; pointer-events: none;"></div>
+
+        <div class="container py-5 text-center">
+            <div class="max-w-700 mx-auto mb-5">
+                <span class="text-primary-accent text-uppercase tracking-wider small fw-bold mb-2 d-block">Proven Impact</span>
+                <h2 class="section-title mb-4">Trusted by <span class="text-gradient">5,000+ Subscribers</span></h2>
+                <p class="text-secondary lead">Our urban farm supplies nutrient-rich, hyper-local produce to thousands of households and local kitchens year-round.</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center align-items-center mt-2">
+                <!-- Stat Card 1 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="glass-card p-4 text-center hover-effect h-100" style="border-top: 4px solid var(--primary-accent);">
+                        <div class="fs-1 text-primary-accent mb-3"><i class="bi bi-heart-fill"></i></div>
+                        <h3 class="display-6 fw-bold text-white mb-2 font-monospace">50k+</h3>
+                        <p class="text-secondary small mb-0 font-monospace text-uppercase tracking-wider">Meals Enriched</p>
+                    </div>
+                </div>
+
+                <!-- Stat Card 2 (Highlighted) -->
+                <div class="col-md-4 col-lg-4">
+                    <div class="glass-card p-5 text-center hover-effect h-100 position-relative shadow-lg" 
+                        style="border: 2px solid var(--primary-accent); transform: scale(1.05); background: rgba(34, 197, 94, 0.03);">
+                        <div class="position-absolute top-0 start-50 translate-middle badge bg-primary-accent text-dark rounded-pill px-3 py-2 text-xs">SUSTAINABLE</div>
+                        <div class="fs-1 text-primary-accent mb-3"><i class="bi bi-droplet-fill"></i></div>
+                        <h3 class="display-5 fw-bold text-white mb-2 font-monospace">95%</h3>
+                        <p class="text-secondary small mb-0 font-monospace text-uppercase tracking-wider">Water Saved vs Soil Farms</p>
+                    </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="glass-card p-4 text-center hover-effect h-100" style="border-top: 4px solid var(--primary-accent);">
+                        <div class="fs-1 text-primary-accent mb-3"><i class="bi bi-patch-check-fill"></i></div>
+                        <h3 class="display-6 fw-bold text-white mb-2 font-monospace">100%</h3>
+                        <p class="text-secondary small mb-0 font-monospace text-uppercase tracking-wider">Pesticide-Free</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-5 bg-secondary-bg">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-3">Simple <span class="text-gradient">3-Step</span> Cycle</h2>
+                <p class="text-secondary max-w-600 mx-auto">Start eating fresher, pesticide-free greens in three easy steps.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card p-5 h-100 text-center">
+                        <div class="mb-4 mx-auto d-flex align-items-center justify-content-center fw-bold rounded-circle shadow"
+                            style="width: 70px; height: 70px; font-size: 1.5rem; background-color: var(--primary-accent); color: #0b1020;">1</div>
+                        <h4 class="h5 mb-3">Choose Your Plan</h4>
+                        <p class="text-secondary mb-0">Select your box size and delivery frequency. Pause, skip, or cancel your subscription anytime.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-5 h-100 text-center">
+                        <div class="mb-4 mx-auto d-flex align-items-center justify-content-center fw-bold rounded-circle shadow"
+                            style="width: 70px; height: 70px; font-size: 1.5rem; background-color: var(--primary-accent); color: #0b1020;">2</div>
+                        <h4 class="h5 mb-3">We Grow & Harvest</h4>
+                        <p class="text-secondary mb-0">Our farm team cultivates your greens in nutrient-rich water. We harvest within 24 hours of delivery.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-5 h-100 text-center">
+                        <div class="mb-4 mx-auto d-flex align-items-center justify-content-center fw-bold rounded-circle shadow"
+                            style="width: 70px; height: 70px; font-size: 1.5rem; background-color: var(--primary-accent); color: #0b1020;">3</div>
+                        <h4 class="h5 mb-3">Enjoy Fresh at Home</h4>
+                        <p class="text-secondary mb-0">Receive your box of freshly harvested, pesticide-free vegetables and herbs, ready to enrich your meals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Preview Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-3">Plans That <span class="text-gradient">Fit Your Table</span></h2>
+                <p class="text-secondary max-w-600 mx-auto">Choose a flexible subscription box and customize your greens. No commitments.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card p-5 h-100 d-flex flex-column">
+                        <div style="height: 40px;" class="mb-4"></div> <!-- Badge Spacer -->
+                        <h4 class="h5 text-white mb-4 text-center">Starter Box</h4>
+                        <div class="display-4 fw-bold mb-4 text-white text-center" style="min-height: 72px; display: flex; align-items: flex-end; justify-content: center;">$25 <span
+                                class="fs-6 text-secondary fw-normal">/wk</span></div>
+                        <div style="min-height: 72px;" class="mb-5"></div>
+                        <ul class="list-unstyled mb-5 text-secondary">
+                            <li class="mb-3 d-flex align-items-center gap-2"><i
+                                    class="bi bi-check2 text-primary-accent fs-5"></i> 4 Leafy Green Selections</li>
+                            <li class="mb-3 d-flex align-items-center gap-2"><i
+                                    class="bi bi-check2 text-primary-accent fs-5"></i> 2 Culinary Herb Selections</li>
+                            <li class="mb-3 d-flex align-items-center gap-2"><i
+                                    class="bi bi-check2 text-primary-accent fs-5"></i> Eco-friendly Packaging</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <a href="register.html" class="btn btn-outline-custom w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card p-5 h-100 border-primary-accent d-flex flex-column"
+                        style="box-shadow: 0 0 40px rgba(34, 197, 94, 0.1);">
+                        <div class="text-center mb-4" style="height: 40px;">
+                            <div class="badge bg-primary-accent text-dark px-3 py-2">MOST POPULAR</div>
+                        </div>
+                        <h4 class="h5 text-white mb-4 text-center">Family Box</h4>
+                        <div class="display-4 fw-bold mb-4 text-white text-center" style="min-height: 72px; display: flex; align-items: flex-end; justify-content: center;">$45 <span
+                                class="fs-6 text-secondary fw-normal">/wk</span></div>
+                        <div style="min-height: 72px;" class="mb-5"></div>
+                        <ul class="list-unstyled mb-5 text-secondary">
+                            <li class="mb-3 d-flex align-items-center gap-2"><i
+                                    class="bi bi-check2 text-primary-accent fs-5"></i> 8 Leafy Green Selections</li>
+                            <li class="mb-3 d-flex align-items-center gap-2"><i
+                                    class="bi bi-check2 text-primary-accent fs-5"></i> 4 Culinary Herb Selections</li>
+                            <li class="mb-3 d-flex align-items-center gap-2"><i
+                                    class="bi bi-check2 text-primary-accent fs-5"></i> Seasonal Microgreen Mix</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <a href="register.html" class="btn btn-primary-custom w-100">Subscribe Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card p-5 h-100 d-flex flex-column">
+                        <div style="height: 40px;" class="mb-4"></div> <!-- Badge Spacer -->
+                        <h4 class="h5 text-white mb-4 text-center">Premium Harvest Box</h4>
+                        <div class="display-4 fw-bold mb-4 text-white text-center" style="min-height: 72px; display: flex; align-items: flex-end; justify-content: center;">$65 <span
+                                class="fs-6 text-secondary fw-normal">/wk</span></div>
+                        <div style="min-height: 72px;" class="mb-5"></div>
+                        <ul class="list-unstyled mb-5 text-secondary">
+                            <li class="mb-3 d-flex align-items-center gap-2"><i
+                                    class="bi bi-check2 text-primary-accent fs-5"></i> Unlimited Custom Selections</li>
+                            <li class="mb-3 d-flex align-items-center gap-2"><i
+                                    class="bi bi-check2 text-primary-accent fs-5"></i> Priority Weekly Harvest</li>
+                            <li class="mb-3 d-flex align-items-center gap-2"><i
+                                    class="bi bi-check2 text-primary-accent fs-5"></i> Specialty Rare Greens</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <a href="contact.html" class="btn btn-outline-custom w-100">Contact Farm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 mt-5 border-top border-color">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-4" href="#">
+                        <img src="assets/images/logo.svg" alt="HarvestRise Logo" height="30" class="me-2">
+                        <span class="fw-bold text-white fs-4">Harvest<span class="text-gradient">Rise</span></span>
+                    </a>
+                    <p class="text-secondary">A premium direct-to-consumer hydroponic farm bringing pesticide-free produce directly from controlled indoor growing environments to urban households.</p>
+                    <div class="d-flex gap-3 fs-4 mt-4 social-links">
+                        <a href="#" class="text-secondary"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Produce Categories</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-secondary">Leafy Greens</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-secondary">Culinary Herbs</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Main Links</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-secondary">Home</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-decoration-none text-secondary">Services</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-secondary">Produce</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-decoration-none text-secondary">Pricing</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none text-secondary">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Stay Updated</h5>
+                    <div class="glass-card p-2 d-flex">
+                        <input type="email" class="form-control bg-transparent border-0 text-white shadow-none"
+                            placeholder="Email Address">
+                        <button class="btn btn-primary-custom ms-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 pt-5 text-secondary border-top border-color">
+                <p>&copy; 2026 HarvestRise Hydroponics. Freshly Harvested. Locally Grown. Delivered Weekly.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | HarvestRise Hydroponics</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* Responsive adjustments */
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            #overview-section .overview-metric-card {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            #overview-section .overview-metric-label {
+                min-height: 48px;
+            }
+
+            #overview-section .overview-metric-change {
+                min-height: 48px;
+            }
+        }
+
+        /* Produce Selector Aesthetics */
+        .produce-select-card {
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .produce-select-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-accent) !important;
+        }
+        .produce-select-card .selected-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary-accent);
+            color: #0b1020;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .produce-select-card.selected {
+            border-color: var(--primary-accent) !important;
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
+        }
+        .produce-select-card.selected .selected-badge {
+            opacity: 1;
+        }
+        .produce-img-placeholder {
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        body:not(.light-theme) .text-secondary {
+            color: #b8c0d4 !important;
+        }
+    </style>
+</head>
+
+<body class="bg-primary-bg">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="mb-5 d-flex align-items-center text-decoration-none">
+            <img src="assets/images/logo.svg" alt="HarvestRise Logo" height="30" class="me-2" style="width: 30px;">
+            <span class="fw-bold text-white fs-4">Harvest<span class="text-gradient">Rise</span></span>
+        </a>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-link active" onclick="showSection('overview')">
+                <i class="bi bi-grid-fill"></i> Overview
+            </a>
+            <a href="#" class="sidebar-link" onclick="showSection('produce')">
+                <i class="bi bi-flower1"></i> Box Selections
+            </a>
+            <a href="#" class="sidebar-link" onclick="showSection('delivery')">
+                <i class="bi bi-calendar-event"></i> Delivery & Schedule
+            </a>
+            <a href="#" class="sidebar-link" onclick="showSection('orders')">
+                <i class="bi bi-credit-card"></i> Orders & Billing
+            </a>
+            <hr class="border-color my-4">
+            <a href="#" class="sidebar-link" onclick="showSection('settings')">
+                <i class="bi bi-gear"></i> Account Settings
+            </a>
+            <a href="login.html" class="sidebar-link text-danger mt-4">
+                <i class="bi bi-box-arrow-left"></i> Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="d-flex justify-content-between align-items-center mb-5">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-link text-white d-lg-none p-0 me-3" id="sidebar-toggle">
+                    <i class="bi bi-list fs-2"></i>
+                </button>
+                <div>
+                    <h1 class="h3 mb-0">Dashboard Overview</h1>
+                    <p class="text-secondary mb-0 text-sm">Welcome back, Subscriber</p>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="d-flex gap-2 ms-2">
+                    <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="theme-toggle" title="Toggle Theme">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="rtl-toggle" title="RTL">
+                        RTL
+                    </button>
+                </div>
+                <img src="https://ui-avatars.com/api/?name=Subscriber+User&background=22C55E&color=ffffff"
+                    class="rounded-circle" width="40" alt="Avatar">
+            </div>
+        </header>
+
+        <!-- OVERVIEW SECTION -->
+        <div id="overview-section" class="content-section">
+            <!-- Stats Grid -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-3">
+                    <div class="dashboard-card overview-metric-card">
+                        <div class="stat-icon"
+                            style="background: rgba(34, 197, 94, 0.1); color: var(--primary-accent);">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+                        <p class="text-secondary text-sm mb-1 overview-metric-label">Active Box</p>
+                        <h3 class="mb-0">Family Box</h3>
+                        <p class="text-success text-sm mb-0 mt-2 overview-metric-change">Customized (12 items)</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card overview-metric-card">
+                        <div class="stat-icon"
+                            style="background: rgba(132, 204, 22, 0.1); color: var(--secondary-accent);">
+                            <i class="bi bi-calendar-event"></i>
+                        </div>
+                        <p class="text-secondary text-sm mb-1 overview-metric-label">Next Delivery</p>
+                        <h3 class="mb-0">June 28, 2026</h3>
+                        <p class="text-success text-sm mb-0 mt-2 overview-metric-change">Harvest locks in 2 days</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card overview-metric-card">
+                        <div class="stat-icon" style="background: rgba(34, 197, 94, 0.1); color: var(--success);">
+                            <i class="bi bi-toggle2-on"></i>
+                        </div>
+                        <p class="text-secondary text-sm mb-1 overview-metric-label">Skip Status</p>
+                        <h3 class="mb-0" id="skip-status-val">Delivering</h3>
+                        <p class="text-secondary text-sm mb-0 mt-2 overview-metric-change">Toggle in delivery tab</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card overview-metric-card">
+                        <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);">
+                            <i class="bi bi-credit-card"></i>
+                        </div>
+                        <p class="text-secondary text-sm mb-1 overview-metric-label">Weekly Price</p>
+                        <h3 class="mb-0">$45.00</h3>
+                        <p class="text-secondary text-sm mb-0 mt-2 overview-metric-change">Renews on June 27</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-8">
+                    <div class="dashboard-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="h5 mb-0">Harvest History (Lbs Harvested)</h4>
+                            <select
+                                class="form-select bg-transparent border-color text-sm text-secondary w-auto shadow-none">
+                                <option>Last 7 Weeks</option>
+                                <option>Last 30 Weeks</option>
+                            </select>
+                        </div>
+                        <div style="height: 300px; position: relative; width: 100%;">
+                            <canvas id="engagementChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dashboard-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="h5 mb-0">Box Selection Ratios</h4>
+                        </div>
+                        <div style="height: 300px; position: relative; width: 100%;">
+                            <canvas id="deviceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Farm Growing Updates & Next Delivery Timeline -->
+            <div class="row g-4 mb-5">
+                <!-- Farm Growing Updates Feed -->
+                <div class="col-lg-6">
+                    <div class="dashboard-card h-100">
+                        <h4 class="h5 mb-4 d-flex align-items-center">
+                            <i class="bi bi-broadcast text-primary-accent me-2"></i> Live Greenhouse Grow Logs
+                        </h4>
+                        <div class="d-flex flex-column gap-3">
+                            <div class="p-3 bg-secondary-bg rounded border border-color">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="badge bg-success text-white">GERMINATION</span>
+                                    <span class="text-secondary text-xs">Today, 9:30 AM</span>
+                                </div>
+                                <p class="mb-0 text-sm">Romaine lettuce seed trays germinated successfully in hydroponic array B-4.</p>
+                            </div>
+                            <div class="p-3 bg-secondary-bg rounded border border-color">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="badge bg-info text-white">NUTRIENT CHECK</span>
+                                    <span class="text-secondary text-xs">Yesterday, 3:15 PM</span>
+                                </div>
+                                <p class="mb-0 text-sm">pH levels and mineral counts verified at optimal 6.2 value in central reservoir.</p>
+                            </div>
+                            <div class="p-3 bg-secondary-bg rounded border border-color">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="badge bg-warning text-dark">HARVEST PREP</span>
+                                    <span class="text-secondary text-xs">2 days ago</span>
+                                </div>
+                                <p class="mb-0 text-sm">Sweet Basil and Butterhead Lettuce crops entered pre-harvest final flush cycle.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Delivery Tracker -->
+                <div class="col-lg-6">
+                    <div class="dashboard-card h-100">
+                        <h4 class="h5 mb-4">Upcoming Delivery Track</h4>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-glass mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-secondary border-0">Delivery Date</th>
+                                        <th class="text-secondary border-0">Box Size</th>
+                                        <th class="text-secondary border-0">Harvest Lock</th>
+                                        <th class="text-secondary border-0">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>June 28, 2026</td>
+                                        <td>Family Box</td>
+                                        <td>June 26, 2026</td>
+                                        <td><span class="status-badge status-active">Grown</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>July 05, 2026</td>
+                                        <td>Family Box</td>
+                                        <td>July 03, 2026</td>
+                                        <td><span class="status-badge status-paused">Seeded</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>July 12, 2026</td>
+                                        <td>Family Box</td>
+                                        <td>July 10, 2026</td>
+                                        <td><span class="status-badge status-paused">Scheduled</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOX SELECTIONS SECTION -->
+        <div id="produce-section" class="content-section d-none">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="h3 mb-0">Customize Weekly Box</h2>
+                    <p class="text-secondary mb-0 text-sm">Select up to 8 leafy greens and 4 herbs for your upcoming Family Box.</p>
+                </div>
+                <button class="btn btn-primary-custom" onclick="alert('Your produce customizations have been saved for the June 28 harvest!')">
+                    <i class="bi bi-save me-2"></i> Save Selections
+                </button>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Leafy Greens -->
+                <div class="col-12"><h4 class="h5 mt-3 mb-2 border-bottom border-color pb-2">Leafy Greens (Select up to 8)</h4></div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-3 produce-select-card selected" onclick="this.classList.toggle('selected')">
+                        <div class="selected-badge"><i class="bi bi-check"></i></div>
+                        <img src="https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?auto=format&fit=crop&q=80&w=300" class="w-100 produce-img-placeholder mb-3" alt="Butterhead Lettuce">
+                        <h5 class="h6 mb-1 text-white">Butterhead Lettuce</h5>
+                        <p class="text-secondary text-xs mb-0">Velvety texture, tender sweet flavor.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-3 produce-select-card selected" onclick="this.classList.toggle('selected')">
+                        <div class="selected-badge"><i class="bi bi-check"></i></div>
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=300" class="w-100 produce-img-placeholder mb-3" alt="Tuscan Baby Kale">
+                        <h5 class="h6 mb-1 text-white">Tuscan Baby Kale</h5>
+                        <p class="text-secondary text-xs mb-0">Earthy, rich in iron, perfect for salads.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-3 produce-select-card selected" onclick="this.classList.toggle('selected')">
+                        <div class="selected-badge"><i class="bi bi-check"></i></div>
+                        <img src="https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&q=80&w=300" class="w-100 produce-img-placeholder mb-3" alt="Arugula">
+                        <h5 class="h6 mb-1 text-white">Crisp Arugula</h5>
+                        <p class="text-secondary text-xs mb-0">Spicy, peppery profile to elevate meals.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-3 produce-select-card" onclick="this.classList.toggle('selected')">
+                        <div class="selected-badge"><i class="bi bi-check"></i></div>
+                        <img src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&q=80&w=300" class="w-100 produce-img-placeholder mb-3" alt="Signature Greens Mix">
+                        <h5 class="h6 mb-1 text-white">Signature Salad Mix</h5>
+                        <p class="text-secondary text-xs mb-0">Custom seasonal blend of tender greens.</p>
+                    </div>
+                </div>
+
+                <!-- Culinary Herbs -->
+                <div class="col-12"><h4 class="h5 mt-3 mb-2 border-bottom border-color pb-2">Culinary Herbs (Select up to 4)</h4></div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-3 produce-select-card selected" onclick="this.classList.toggle('selected')">
+                        <div class="selected-badge"><i class="bi bi-check"></i></div>
+                        <img src="https://animals.sandiegozoo.org/sites/default/files/2016-11/basil-iStock_84310823_XXXLARGE.jpg " class="w-100 produce-img-placeholder mb-3" alt="Sweet Basil">
+                        <h5 class="h6 mb-1 text-white">Genovese Basil</h5>
+                        <p class="text-secondary text-xs mb-0">Highly aromatic, classic culinary favorite.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-3 produce-select-card selected" onclick="this.classList.toggle('selected')">
+                        <div class="selected-badge"><i class="bi bi-check"></i></div>
+                        <img src="https://hips.hearstapps.com/hmg-prod/images/78f1e894-778b-48fc-96f8-8bba96950ee4.jpeg?crop=0.665xw:1xh;0.167xw,0xh&resize=1120:*" class="w-100 produce-img-placeholder mb-3" alt="Fresh Cilantro">
+                        <h5 class="h6 mb-1 text-white">Fresh Cilantro</h5>
+                        <p class="text-secondary text-xs mb-0">Bright, citrusy nodes perfect for salsas.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-3 produce-select-card" onclick="this.classList.toggle('selected')">
+                        <div class="selected-badge"><i class="bi bi-check"></i></div>
+                        <img src="https://t4.ftcdn.net/jpg/01/70/65/21/360_F_170652117_4zC5QQaMCTF8OCYmumYkGiu6mWIAD8k7.jpg" class="w-100 produce-img-placeholder mb-3" alt="Peppermint">
+                        <h5 class="h6 mb-1 text-white">Fresh Peppermint</h5>
+                        <p class="text-secondary text-xs mb-0">Cool and refreshing, great for tea & garnishes.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-3 produce-select-card" onclick="this.classList.toggle('selected')">
+                        <div class="selected-badge"><i class="bi bi-check"></i></div>
+                        <img src="https://images.unsplash.com/photo-1588879460618-9249e7d947d1?auto=format&fit=crop&q=80&w=300" class="w-100 produce-img-placeholder mb-3" alt="Fresh Rosemary">
+                        <h5 class="h6 mb-1 text-white">Greek Rosemary</h5>
+                        <p class="text-secondary text-xs mb-0">Woody aroma, essential for roasted vegetables.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DELIVERY & SCHEDULE SECTION -->
+        <div id="delivery-section" class="content-section d-none">
+            <div class="row g-4">
+                <!-- Delivery Preferences Control -->
+                <div class="col-lg-6">
+                    <div class="dashboard-card">
+                        <h4 class="h5 mb-4 border-bottom border-color pb-3">Delivery Preferences</h4>
+                        <form id="deliveryPrefForm" onsubmit="event.preventDefault(); alert('Delivery preferences updated successfully!');">
+                            <!-- Skip Next Delivery -->
+                            <div class="p-3 bg-secondary-bg rounded border border-color mb-4 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="h6 text-white mb-1">Skip Next Delivery</h5>
+                                    <p class="text-secondary text-xs mb-0">Pause the harvest for June 28, 2026.</p>
+                                </div>
+                                <div class="form-check form-switch p-0" style="width: 50px;">
+                                    <input class="form-check-input ms-0 w-100 h-100 py-1" type="checkbox" id="skipDeliveryToggle" onchange="
+                                        const val = document.getElementById('skip-status-val');
+                                        if(this.checked) {
+                                            val.textContent = 'Skipped';
+                                            val.parentElement.parentElement.classList.add('border-danger');
+                                        } else {
+                                            val.textContent = 'Delivering';
+                                            val.parentElement.parentElement.classList.remove('border-danger');
+                                        }
+                                    ">
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label text-secondary text-sm">Preferred Delivery Window</label>
+                                <select class="form-select bg-transparent border-color text-white shadow-none p-3">
+                                    <option class="text-dark">Morning (8:00 AM - 12:00 PM)</option>
+                                    <option class="text-dark">Afternoon (1:00 PM - 5:00 PM)</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label text-secondary text-sm">Delivery Instructions</label>
+                                <textarea class="form-control bg-transparent border-color text-white shadow-none p-3" rows="3" 
+                                    placeholder="e.g. Leave in the insulated box on the porch behind the planter box."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary-custom w-100 py-3">Save Preferences</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Upcoming Harvest Schedules -->
+                <div class="col-lg-6">
+                    <div class="dashboard-card">
+                        <h4 class="h5 mb-4">Upcoming Harvest Calendar</h4>
+                        <p class="text-secondary text-sm mb-4">Track which varieties of vegetables are in the nursery, growing arrays, and ready for harvest.</p>
+                        <div class="d-flex flex-column gap-3">
+                            <div class="d-flex align-items-center justify-content-between p-3 bg-secondary-bg rounded border border-color">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary-accent rounded p-2 text-dark me-3"><i class="bi bi-calendar"></i></div>
+                                    <div>
+                                        <div class="fw-bold">June 28 Harvest</div>
+                                        <div class="text-secondary text-xs">Arugula, Butterhead, Sweet Basil</div>
+                                    </div>
+                                </div>
+                                <span class="badge bg-success">Ready</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between p-3 bg-secondary-bg rounded border border-color">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-secondary rounded p-2 me-3"><i class="bi bi-calendar"></i></div>
+                                    <div>
+                                        <div class="fw-bold">July 05 Harvest</div>
+                                        <div class="text-secondary text-xs">Romaine Lettuce, Italian Herbs</div>
+                                    </div>
+                                </div>
+                                <span class="badge bg-warning text-dark">Growing</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between p-3 bg-secondary-bg rounded border border-color">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-secondary rounded p-2 me-3"><i class="bi bi-calendar"></i></div>
+                                    <div>
+                                        <div class="fw-bold">July 12 Harvest</div>
+                                        <div class="text-secondary text-xs">Tuscan Kale, Peppermint, Microgreens</div>
+                                    </div>
+                                </div>
+                                <span class="badge bg-secondary">Seeded</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ORDERS & BILLING SECTION -->
+        <div id="orders-section" class="content-section d-none">
+            <div class="row g-4">
+                <!-- Payment Information Details -->
+                <div class="col-lg-5">
+                    <div class="dashboard-card h-100">
+                        <h4 class="h5 mb-4 border-bottom border-color pb-3">Billing Settings</h4>
+                        
+                        <div class="glass-card p-4 mb-4 border-primary-accent" style="background: rgba(34, 197, 94, 0.03);">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="h6 text-white mb-0">Weekly Box Plan</h5>
+                                <span class="badge bg-primary-accent text-dark">Active</span>
+                            </div>
+                            <h3 class="display-6 fw-bold text-white mb-1">$45.00 <span class="fs-6 text-secondary font-normal">/ week</span></h3>
+                            <p class="text-secondary text-sm mb-4">Next billing charge on June 27, 2026.</p>
+                            <hr class="border-color mb-4">
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-credit-card-2-front text-primary-accent fs-3 me-3"></i>
+                                <div>
+                                    <div class="fw-bold text-white">Visa ending in 4242</div>
+                                    <div class="text-secondary text-xs">Expires 12 / 2028</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-custom w-100 btn-sm" onclick="alert('Redirecting to Stripe Customer Portal...')">Update Billing Method</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order History -->
+                <div class="col-lg-7">
+                    <div class="dashboard-card h-100">
+                        <h4 class="h5 mb-4">Successful Deliveries Log</h4>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-glass mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-secondary border-0">Order ID</th>
+                                        <th class="text-secondary border-0">Date</th>
+                                        <th class="text-secondary border-0">Items</th>
+                                        <th class="text-secondary border-0">Total</th>
+                                        <th class="text-secondary border-0">Invoice</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#HR-9231</td>
+                                        <td>June 21, 2026</td>
+                                        <td>Family Box (12 Items)</td>
+                                        <td>$45.00</td>
+                                        <td><a href="#" class="text-primary-accent text-decoration-none" onclick="event.preventDefault(); alert('Downloading Invoice #HR-9231...')"><i class="bi bi-download"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#HR-9104</td>
+                                        <td>June 14, 2026</td>
+                                        <td>Family Box (12 Items)</td>
+                                        <td>$45.00</td>
+                                        <td><a href="#" class="text-primary-accent text-decoration-none" onclick="event.preventDefault(); alert('Downloading Invoice #HR-9104...')"><i class="bi bi-download"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#HR-8982</td>
+                                        <td>June 07, 2026</td>
+                                        <td>Family Box (12 Items)</td>
+                                        <td>$45.00</td>
+                                        <td><a href="#" class="text-primary-accent text-decoration-none" onclick="event.preventDefault(); alert('Downloading Invoice #HR-8982...')"><i class="bi bi-download"></i> PDF</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCOUNT SETTINGS SECTION -->
+        <div id="settings-section" class="content-section d-none">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="dashboard-card">
+                        <h4 class="h5 mb-4 border-bottom border-color pb-3">Profile Information</h4>
+                        <form onsubmit="event.preventDefault(); alert('Profile updated successfully!');">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-secondary text-sm">Full Name</label>
+                                    <input type="text"
+                                        class="form-control bg-transparent border-color text-white shadow-none"
+                                        value="John Doe">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-secondary text-sm">Email Address</label>
+                                    <input type="email"
+                                        class="form-control bg-transparent border-color text-white shadow-none"
+                                        value="john.doe@example.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-secondary text-sm">Contact Phone</label>
+                                    <input type="text"
+                                        class="form-control bg-transparent border-color text-white shadow-none"
+                                        value="(555) 123-4567">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-secondary text-sm">Delivery Address</label>
+                                    <input type="text"
+                                        class="form-control bg-transparent border-color text-white shadow-none"
+                                        value="123 Urban Green Way, Apt 4B, San Francisco, CA">
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary-custom px-5">Save Changes</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dashboard-card">
+                        <h4 class="h5 mb-4 border-bottom border-color pb-3">Subscription Details</h4>
+                        <div class="badge bg-primary-accent text-dark mb-3">Family Weekly Plan</div>
+                        <p class="text-white fw-bold mb-1">$45 / week</p>
+                        <p class="text-secondary text-sm mb-4">Harvest Lock on June 26, 2026</p>
+                        <button class="btn btn-outline-custom btn-sm w-100" onclick="showSection('orders')">Manage Subscription</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

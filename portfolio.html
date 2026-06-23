@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Produce | HarvestRise Hydroponics</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <style>
+        .portfolio-img {
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .portfolio-grid-primary>.col-lg-6 {
+                display: flex;
+            }
+
+            .portfolio-card-equal {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+            }
+
+            .portfolio-metrics {
+                margin-top: auto;
+                flex-wrap: wrap;
+            }
+
+            .testimonial-header {
+                min-height: 100px;
+                align-items: flex-start !important;
+            }
+
+            .testimonial-header .text-xs {
+                min-height: 44px;
+                line-height: 1.4;
+            }
+        }
+
+        .testimonial-card-uniform {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .testimonial-header {
+            min-height: 56px;
+        }
+
+        .testimonial-meta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (min-width: 992px) {
+            .testimonial-header {
+                min-height: 104px;
+                align-items: flex-start !important;
+            }
+
+            .testimonial-meta {
+                min-height: 78px;
+            }
+
+            .testimonial-rating {
+                min-height: 24px;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        body:not(.light-theme) .process-step-number {
+            background: rgba(34, 197, 94, 0.14);
+            border: 1px solid rgba(34, 197, 94, 0.35);
+            color: #ffffff !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 576px) {
+            .luxe-metrics {
+                gap: 0.5rem !important;
+                flex-wrap: nowrap;
+            }
+
+            .luxe-chip {
+                white-space: nowrap;
+                font-size: 0.78rem !important;
+                padding: 0.45rem 0.6rem !important;
+            }
+
+            .process-kpi-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .process-kpi-value {
+                min-height: 52px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .process-kpi-label {
+                min-height: 72px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                text-align: center;
+                line-height: 1.35;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.svg" alt="HarvestRise Logo" class="me-2" style="height: 32px; width: 32px;">
+                <span class="fw-bold text-white fs-4">Harvest<span class="text-gradient">Rise</span></span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list text-white fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portfolio.html">Produce</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="dashboard.html" class="btn btn-outline-custom btn-sm d-flex align-items-center"
+                        title="Dashboard">
+                        <i class="bi bi-grid-fill"></i>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-custom btn-sm d-flex align-items-center" title="Login">
+                        Login
+                    </a>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="theme-toggle" title="Toggle Theme">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                        <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="rtl-toggle" title="RTL">
+                            RTL
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portfolio Hero -->
+    <section class="py-5 mt-5">
+        <div class="container pt-5 text-center">
+            <h1 class="display-3 fw-bold mb-4">Freshly Harvested <br> Local <span class="text-gradient">Produce</span></h1>
+            <p class="text-secondary lead max-w-600 mx-auto px-3">Grown in state-of-the-art indoor vertical arrays. Clean, pesticide-free crops harvested within 24 hours of delivery.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-5">
+        <div class="container pb-5">
+            <div class="row g-5 portfolio-grid-primary">
+                <!-- Butterhead Lettuce -->
+                <div class="col-lg-6">
+                    <div class="glass-card p-4 portfolio-card-equal">
+                        <img src="https://media.istockphoto.com/id/641753716/photo/organic-vegetables-garden.jpg?s=612x612&w=0&k=20&c=lvCdViLBuT1Z1XI5a3F213hucwrJN5t1j-yI1tNH204="
+                            class="portfolio-img w-100" alt="Butterhead Lettuce">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="badge bg-primary-accent text-dark mb-3">LEAFY GREENS</span>
+                                <h3 class="h4">Butterhead Lettuce</h3>
+                            </div>
+                            <div class="text-end">
+                                <h4 class="h3 mb-0 text-gradient">4.5 oz</h4>
+                                <p class="text-secondary text-sm">Avg. Portion Size</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary mb-4">Sweet, tender leaves with a delicate buttery texture. Perfect for gourmet salads, wraps, and sandwiches. Grown in mineral-rich water streams under specialized indoor conditions.</p>
+                        <div class="d-flex gap-3 portfolio-metrics">
+                            <span class="text-sm bg-secondary-bg px-3 py-2 rounded-3 border border-color"><i
+                                    class="bi bi-shield-check me-2"></i> 100% Pesticide-Free</span>
+                            <span class="text-sm bg-secondary-bg px-3 py-2 rounded-3 border border-color"><i
+                                    class="bi bi-clock me-2"></i> Harvested Weekly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Genovese Basil -->
+                <div class="col-lg-6">
+                    <div class="glass-card p-4 portfolio-card-equal">
+                        <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=800"
+                            class="portfolio-img w-100" alt="Genovese Basil">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="badge status-paused text-warning mb-3">CULINARY HERBS</span>
+                                <h3 class="h4">Genovese Basil</h3>
+                            </div>
+                            <div class="text-end">
+                                <h4 class="h3 mb-0 text-gradient">2.0 oz</h4>
+                                <p class="text-secondary text-sm">Avg. Portion Size</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary mb-4">Intensely aromatic basil with large, glossy dark green leaves. Perfect for pesto, pasta dishes, caprese salads, and classic Italian cooking. Delivered root-on for longer counter life.</p>
+                        <div class="d-flex gap-3 portfolio-metrics luxe-metrics">
+                            <span class="text-sm bg-secondary-bg px-3 py-2 rounded-3 border border-color luxe-chip"><i
+                                    class="bi bi-stars me-2"></i> High Oil Content</span>
+                            <span class="text-sm bg-secondary-bg px-3 py-2 rounded-3 border border-color luxe-chip"><i
+                                    class="bi bi-moisture me-2"></i> Root-on Freshness</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signature Salad Mix -->
+                <div class="col-lg-12">
+                    <div class="glass-card p-5">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 mb-4 mb-lg-0">
+                                <span class="badge bg-secondary-accent text-white mb-3">SALAD MIXES</span>
+                                <h2 class="display-6 mb-4">HarvestRise Signature Salad Mix</h2>
+                                <p class="text-secondary lead mb-4">A crisp, vibrant blend of red and green oakleaf, baby romaine, arugula, and mizuna, pre-washed and ready to eat. Formulated for maximum color, texture, and flavor variety.</p>
+                                <div class="row g-4 mb-5">
+                                    <div class="col-4">
+                                        <h4 class="h5 mb-1 text-primary-accent">8.0 oz</h4>
+                                        <p class="text-secondary text-xs">Total Pack Weight</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <h4 class="h5 mb-1 text-primary-accent">100%</h4>
+                                        <p class="text-secondary text-xs">Chemical-Free</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <h4 class="h5 mb-1 text-primary-accent">12 Days</h4>
+                                        <p class="text-secondary text-xs">Avg. Crisper Life</p>
+                                    </div>
+                                </div>
+                                <a href="pricing.html" class="btn btn-primary-custom">Subscribe to Box</a>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="glass-card p-2 border-0 bg-transparent">
+                                    <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&q=80&w=740"
+                                        class="img-fluid rounded-4 shadow-lg" alt="Signature Salad Mix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials Section -->
+    <section class="py-5 bg-secondary-bg mt-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-3">What <span class="text-gradient">Subscribers Say</span></h2>
+                <p class="text-secondary max-w-600 mx-auto">Real feedback from local households that transformed their eating habits with HarvestRise.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100 testimonial-card-uniform">
+                        <div class="d-flex align-items-center mb-4 testimonial-header">
+                            <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=22C55E&color=ffffff"
+                                class="rounded-circle me-3" width="50" alt="Client Sarah">
+                            <div class="testimonial-meta">
+                                <h5 class="h6 mb-0">Sarah Chen</h5>
+                                <p class="text-secondary text-xs mb-0">Home Cook & Tech Lead</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 testimonial-rating">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="text-secondary mb-0 testimonial-quote">"The Butterhead lettuce is incredibly clean. There's no soil or grit, and the leaves stay fresh in my crisper drawer for almost two weeks."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100 testimonial-card-uniform">
+                        <div class="d-flex align-items-center mb-4 testimonial-header">
+                            <img src="https://ui-avatars.com/api/?name=Marcus+Johnson&background=22C55E&color=ffffff"
+                                class="rounded-circle me-3" width="50" alt="Client Marcus">
+                            <div class="testimonial-meta">
+                                <h5 class="h6 mb-0">Marcus Johnson</h5>
+                                <p class="text-secondary text-xs mb-0">Father of Two</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 testimonial-rating">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="text-secondary mb-0 testimonial-quote">"Their sweet Genovese basil has changed my homemade pesto game. It is so fragrant and flavorful, and always harvested the day I get it."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100 testimonial-card-uniform">
+                        <div class="d-flex align-items-center mb-4 testimonial-header">
+                            <img src="https://ui-avatars.com/api/?name=Emily+Rodriguez&background=22C55E&color=ffffff"
+                                class="rounded-circle me-3" width="50" alt="Client Emily">
+                            <div class="testimonial-meta">
+                                <h5 class="h6 mb-0">Emily Rodriguez</h5>
+                                <p class="text-secondary text-xs mb-0">Local Cafe Owner</p>
+                            </div>
+                        </div>
+                        <div class="mb-3 testimonial-rating">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="text-secondary mb-0 testimonial-quote">"HarvestRise is our primary green supplier for our local cafe. The quality is consistent year-round, which is impossible with traditional soil farming."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process & Methodology Section -->
+    <section class="py-5 mt-5">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="display-5 mb-4">Our <span class="text-gradient">Growing Process</span></h2>
+                    <p class="text-secondary lead mb-5">We follow a strategic approach to ensure every crop cycle delivers maximum flavor, nutrition, and environmental savings.</p>
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <div class="bg-primary-accent rounded-circle p-3 text-dark me-4 process-step-number"
+                                    style="min-width: 60px; height: 60px;">
+                                    <span class="fw-bold">01</span>
+                                </div>
+                                <div>
+                                    <h4 class="h5 mb-2">Seed Germination</h4>
+                                    <p class="text-secondary mb-0">We source certified non-GMO seeds and germinate them in organic coconut coir substrates under optimized moisture levels.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <div class="bg-primary-accent rounded-circle p-3 text-dark me-4 process-step-number"
+                                    style="min-width: 60px; height: 60px;">
+                                    <span class="fw-bold">02</span>
+                                </div>
+                                <div>
+                                    <h4 class="h5 mb-2">Vertical Growth Phase</h4>
+                                    <p class="text-secondary mb-0">Seedlings are transferred to vertical arrays where they absorb water-circulated organic minerals and target LED light spectrums.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <div class="bg-primary-accent rounded-circle p-3 text-dark me-4 process-step-number"
+                                    style="min-width: 60px; height: 60px;">
+                                    <span class="fw-bold">03</span>
+                                </div>
+                                <div>
+                                    <h4 class="h5 mb-2">Harvest & Delivery</h4>
+                                    <p class="text-secondary mb-0">Our team harvests the produce at its nutritional peak, packing it immediately for local door-to-door delivery within 24 hours.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-card p-5 text-center">
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="glass-card p-4 h-100 process-kpi-card">
+                                    <i class="bi bi-droplet-half fs-1 text-primary-accent mb-3 d-block"></i>
+                                    <h3 class="h4 mb-1 process-kpi-value">95%</h3>
+                                    <p class="text-secondary text-sm process-kpi-label">Water Savings</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="glass-card p-4 h-100 process-kpi-card">
+                                    <i class="bi bi-clock-history fs-1 text-primary-accent mb-3 d-block"></i>
+                                    <h3 class="h4 mb-1 process-kpi-value">24 Hours</h3>
+                                    <p class="text-secondary text-sm process-kpi-label">Harvest to Delivery</p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="glass-card p-4">
+                                    <i class="bi bi-shield-check fs-1 text-gradient mb-3 d-block"></i>
+                                    <h3 class="h4 mb-1">100% Safe</h3>
+                                    <p class="text-secondary text-sm">Pesticide-Free Certified</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 mt-5 border-top border-color">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-4" href="index.html">
+                        <img src="assets/images/logo.svg" alt="HarvestRise Logo" height="30" class="me-2">
+                        <span class="fw-bold text-white fs-4">Harvest<span class="text-gradient">Rise</span></span>
+                    </a>
+                    <p class="text-secondary">A premium direct-to-consumer hydroponic farm bringing pesticide-free produce directly from controlled indoor growing environments to urban households.</p>
+                    <div class="d-flex gap-3 fs-4 mt-4 social-links">
+                        <a href="#" class="text-secondary"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Produce Categories</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-secondary">Leafy Greens</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-secondary">Culinary Herbs</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Main Links</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-secondary">Home</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-decoration-none text-secondary">Services</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-secondary">Produce</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-decoration-none text-secondary">Pricing</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none text-secondary">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Stay Updated</h5>
+                    <div class="glass-card p-2 d-flex">
+                        <input type="email" class="form-control bg-transparent border-0 text-white shadow-none"
+                            placeholder="Email Address">
+                        <button class="btn btn-primary-custom ms-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 pt-5 text-secondary border-top border-color">
+                <p>&copy; 2026 HarvestRise Hydroponics. Freshly Harvested. Locally Grown. Delivered Weekly.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

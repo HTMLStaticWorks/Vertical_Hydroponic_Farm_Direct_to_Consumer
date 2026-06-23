@@ -1,0 +1,182 @@
+/* Light Mode Overrides for HarvestRise Hydroponics */
+
+body.light-theme {
+    --primary-bg: #F8FFFA;
+    --secondary-bg: #ffffff;
+    --card-bg: #ffffff;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --border-color: rgba(0, 0, 0, 0.08);
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+}
+
+/* Navbar Light Theme */
+body.light-theme .navbar-custom {
+    background: rgba(248, 255, 250, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .nav-link {
+    color: #475569 !important;
+}
+
+body.light-theme .nav-link:hover,
+body.light-theme .nav-link.active {
+    color: var(--secondary-accent) !important;
+}
+
+body.light-theme .navbar-brand .text-white {
+    color: #0F172A !important;
+}
+
+/* Sections & Typography */
+body.light-theme .bg-secondary-bg {
+    background-color: #ffffff;
+}
+
+body.light-theme .text-secondary {
+    color: #475569 !important;
+}
+
+body.light-theme .text-white {
+    color: #0F172A !important;
+}
+
+body.light-theme .display-3,
+body.light-theme .display-5,
+body.light-theme .h1,
+body.light-theme .h2,
+body.light-theme .h3,
+body.light-theme .h4,
+body.light-theme .h5 {
+    color: #0F172A;
+}
+
+body.light-theme .hero-ai-enhanced-badge {
+    background-color: var(--secondary-accent) !important;
+    color: #ffffff !important;
+}
+
+/* Cards & Dashboard Elements */
+body.light-theme .glass-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .glass-card:hover {
+    border-color: var(--secondary-accent);
+}
+
+body.light-theme .dashboard-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+body.light-theme .sidebar {
+    background: #ffffff;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .sidebar-link {
+    color: #475569;
+}
+
+body.light-theme .sidebar-link:hover,
+body.light-theme .sidebar-link.active {
+    background: rgba(34, 197, 94, 0.05);
+    color: var(--secondary-accent);
+}
+
+/* Tables */
+body.light-theme .table-dark {
+    --bs-table-bg: transparent;
+    color: #0F172A;
+}
+
+body.light-theme .table-glass tr td,
+body.light-theme .table-glass tr th {
+    background: #ffffff;
+    color: #0F172A;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .table-glass th.text-secondary {
+    color: #64748b !important;
+}
+
+/* Form Controls */
+body.light-theme .form-control,
+body.light-theme .form-select {
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #0F172A !important;
+}
+
+body.light-theme .form-control::placeholder {
+    color: #94a3b8;
+}
+
+body.light-theme .input-group-text {
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #64748b;
+}
+
+/* Auth Pages Specific */
+body.light-theme .auth-image {
+    filter: grayscale(0.2) brightness(1.1);
+}
+
+/* Footer */
+body.light-theme footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme footer .text-secondary {
+    color: #64748b !important;
+}
+
+body.light-theme footer a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+body.light-theme footer a:hover {
+    color: var(--secondary-accent) !important;
+}
+
+body.light-theme footer .social-links a:hover {
+    transform: translateY(-5px);
+}
+
+body.light-theme .border-color {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Navbar Toggler Fix */
+body.light-theme .navbar-toggler,
+body.light-theme .navbar-toggler i {
+    color: #0F172A !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Mobile/Tablet Menu Fix */
+@media (max-width: 1199.98px) {
+    body.light-theme .navbar-custom .navbar-collapse {
+        background: rgba(248, 255, 250, 0.98);
+        border-color: rgba(0, 0, 0, 0.08);
+    }
+}
+
+/* Buttons */
+body.light-theme .btn-outline-custom {
+    color: #0F172A;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .btn-outline-custom:hover {
+    background: #f1f5f9;
+}

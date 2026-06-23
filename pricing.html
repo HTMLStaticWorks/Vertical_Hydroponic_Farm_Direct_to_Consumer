@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plans | HarvestRise Hydroponics</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <style>
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .pricing-plans-row .pricing-feature-list li {
+                display: grid !important;
+                grid-template-columns: 22px 1fr;
+                column-gap: 10px;
+                align-items: start !important;
+            }
+
+            .pricing-plans-row .pricing-feature-list li i {
+                margin-right: 0 !important;
+                margin-top: 2px;
+            }
+
+            .pricing-plans-row .pricing-feature-list li span {
+                display: block;
+            }
+        }
+
+        /* PART A — Reduce Excessive Spacing */
+        section.py-5 {
+            padding-top: 3rem !important;
+            padding-bottom: 3rem !important;
+        }
+        section.mt-5 {
+            margin-top: 2rem !important;
+        }
+        .container.pt-5, .container.py-5 {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+        .mb-5 {
+            margin-bottom: 1.75rem !important;
+        }
+
+        /* PART B — Dark Mode Text Contrast Fix */
+        body:not(.light-theme) .text-secondary {
+            color: #b8c0d4 !important;
+        }
+        body:not(.light-theme) .badge.bg-primary-accent.text-dark {
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.svg" alt="HarvestRise Logo" class="me-2" style="height: 32px; width: 32px;">
+                <span class="fw-bold text-white fs-4">Harvest<span class="text-gradient">Rise</span></span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list text-white fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Produce</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="dashboard.html" class="btn btn-outline-custom btn-sm d-flex align-items-center"
+                        title="Dashboard">
+                        <i class="bi bi-grid-fill"></i>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-custom btn-sm d-flex align-items-center" title="Login">
+                        Login
+                    </a>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="theme-toggle" title="Toggle Theme">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                        <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="rtl-toggle" title="RTL">
+                            RTL
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pricing Hero -->
+    <section class="py-5 mt-5">
+        <div class="container pt-5">
+            <div class="text-center mb-5">
+                <h1 class="display-3 fw-bold mb-4">Plans Built for <br> <span class="text-gradient">Every Table</span>
+                </h1>
+                <p class="text-secondary lead max-w-600 mx-auto mb-4 px-3">Choose a flexible weekly produce box size. Easily pause, skip, or cancel your subscription at any time.</p>
+                <div class="d-flex justify-content-center align-items-center gap-3 mb-5">
+                    <span class="text-white">Weekly Billing</span>
+                    <div class="form-check form-switch p-0" style="width: 50px;">
+                        <input class="form-check-input ms-0 w-100 h-100 py-1" type="checkbox" id="billingSwitch"
+                            checked>
+                    </div>
+                    <span class="text-secondary">Monthly Pre-pay <span class="badge bg-primary-accent text-dark ms-2">Save 10%</span></span>
+                </div>
+            </div>
+
+            <div class="row g-4 justify-content-center pricing-plans-row">
+                <!-- Starter Box -->
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100 d-flex flex-column">
+                        <div style="height: 40px;" class="mb-4"></div> <!-- Badge Spacer -->
+                        <h3 class="h5 text-white mb-4">Starter Box</h3>
+                        <div class="display-4 fw-bold mb-4 text-white">$25 <span class="fs-6 text-secondary fw-normal">/wk</span></div>
+                        <p class="text-secondary text-sm mb-4">Perfect for singles or couples.</p>
+                        <hr class="border-color mb-5">
+                        <ul class="list-unstyled text-start mb-5 pricing-feature-list">
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>4 Leafy Green Selections</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>2 Culinary Herb Selections</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Eco-friendly Delivery Box</span>
+                            </li>
+                            <li class="mb-3 text-secondary d-flex align-items-center"><i
+                                    class="bi bi-dash-circle me-2"></i><span>No Specialty Greens</span></li>
+                        </ul>
+                        <div class="mt-auto">
+                            <a href="register.html" class="btn btn-outline-custom w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Box -->
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100 border-primary-accent d-flex flex-column"
+                        style="box-shadow: 0 0 40px rgba(34, 197, 94, 0.1);">
+                        <div class="text-center mb-4" style="height: 40px;">
+                            <div class="badge px-3 py-2 fw-semibold" style="background-color: var(--primary-accent); color: #0b1020; letter-spacing: 0.05em;">MOST POPULAR</div>
+                        </div>
+                        <h3 class="h5 text-white mb-4">Family Box</h3>
+                        <div class="display-4 fw-bold mb-4 text-white">$45 <span class="fs-6 text-secondary fw-normal">/wk</span>
+                        </div>
+                        <p class="text-secondary text-sm mb-4">Portions optimized for active families.</p>
+                        <hr class="border-color mb-5">
+                        <ul class="list-unstyled text-start mb-5 pricing-feature-list">
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>8 Leafy Green Selections</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>4 Culinary Herb Selections</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Seasonal Microgreen Mix</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Flexible Delivery Dates</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Pause or Skip Anytime</span></li>
+                        </ul>
+                        <div class="mt-auto">
+                            <a href="register.html" class="btn btn-primary-custom w-100">Subscribe Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Harvest Box -->
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100 d-flex flex-column">
+                        <div style="height: 40px;" class="mb-4"></div> <!-- Badge Spacer -->
+                        <h3 class="h5 text-white mb-4">Premium Harvest</h3>
+                        <div class="display-4 fw-bold mb-4 text-white">$65 <span class="fs-6 text-secondary fw-normal">/wk</span></div>
+                        <p class="text-secondary text-sm mb-4">For gourmet kitchens & large homes.</p>
+                        <hr class="border-color mb-5">
+                        <ul class="list-unstyled text-start mb-5 pricing-feature-list">
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Unlimited Custom Selections</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Priority Weekly Harvest Slot</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Specialty Greens & Flowers</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Dedicated Farm Support</span></li>
+                        </ul>
+                        <div class="mt-auto">
+                            <a href="contact.html" class="btn btn-outline-custom w-100">Contact Farm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Support Section -->
+    <section class="py-5 bg-secondary-bg">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="display-5 mb-4">Dedicated <span class="text-gradient">Support & Inspiration</span></h2>
+                    <p class="text-secondary lead">Whether you are a starter member or have our premium plan, our farm coordinators and community cooks are here to help with recipes and storage tips 24/7.</p>
+                    <ul class="list-unstyled mt-5">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="bi bi-check2-circle text-primary-accent me-3 fs-5"></i>
+                            <span>Weekly culinary recipe cards in every box</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="bi bi-check2-circle text-primary-accent me-3 fs-5"></i>
+                            <span>One-on-one consultation with farm organizers</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="glass-card p-4 text-center">
+                                <i class="bi bi-chat-text text-primary-accent fs-1 mb-3 d-block"></i>
+                                <h4 class="h5">Recipe Support</h4>
+                                <p class="text-secondary text-sm mb-0">Talk to our farm cooks for meal prep ideas.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="glass-card p-4 text-center">
+                                <i class="bi bi-journal-text text-primary-accent fs-1 mb-3 d-block"></i>
+                                <h4 class="h5">Greenhouse Tours</h4>
+                                <p class="text-secondary text-sm mb-0">Visit our vertical indoor agricultural arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Confidence Section -->
+    <section class="py-5">
+        <div class="container py-5 text-center">
+            <div class="glass-card p-5 max-w-600 mx-auto">
+                <div class="mb-4">
+                    <i class="bi bi-shield-lock-fill text-primary-accent display-4"></i>
+                </div>
+                <h3 class="h2 mb-3">Secure Payment Guarantee</h3>
+                <p class="text-secondary mb-4">All plans include a pause-anytime policy. We partner with world-class payment processors to keep your transaction details fully secure.</p>
+                <div class="d-flex justify-content-center align-items-center gap-5 opacity-75 grayscale-hover">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg"
+                        height="25" alt="Stripe">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" height="25" alt="PayPal">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/320px-Visa_Inc._logo.svg.png" height="20"
+                        alt="Visa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 mt-5">
+        <div class="container py-5">
+            <h2 class="display-5 text-center mb-5">Common Questions</h2>
+            <div class="accordion max-w-600 mx-auto" id="pricingFaqAccordion">
+                <div class="accordion-item glass-card mb-3 border-color">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-transparent text-white" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="false"
+                            aria-controls="faqOne">
+                            Can I change my produce selections after ordering?
+                        </button>
+                    </h2>
+                    <div id="faqOne" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body text-secondary">
+                            Yes! You can customize your upcoming produce box selections in your member dashboard up to 24 hours before our scheduled harvest time.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item glass-card mb-3 border-color">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-transparent text-white" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false"
+                            aria-controls="faqTwo">
+                            Do my deliveries roll over if I skip a week?
+                        </button>
+                    </h2>
+                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body text-secondary">
+                            If you skip a week, you will not be billed for that delivery. Simply toggle the skip switch in your dashboard before the weekly harvest lock.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item glass-card mb-3 border-color">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-transparent text-white" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false"
+                            aria-controls="faqThree">
+                            Can I pause my subscription when I go on vacation?
+                        </button>
+                    </h2>
+                    <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body text-secondary">
+                            Absolutely. You can pause your subscription for up to 6 months from your settings tab. You will not be charged, and your spot remains secured.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item glass-card border-color">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-transparent text-white" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false"
+                            aria-controls="faqFour">
+                            What payment methods do you accept?
+                        </button>
+                    </h2>
+                    <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body text-secondary">
+                            We accept all major credit and debit cards (Visa, Mastercard, Amex) as well as PayPal. All transactions are secured via Stripe with 256-bit SSL encryption.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 mt-5 border-top border-color">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-4" href="index.html">
+                        <img src="assets/images/logo.svg" alt="HarvestRise Logo" height="30" class="me-2">
+                        <span class="fw-bold text-white fs-4">Harvest<span class="text-gradient">Rise</span></span>
+                    </a>
+                    <p class="text-secondary">A premium direct-to-consumer hydroponic farm bringing pesticide-free produce directly from controlled indoor growing environments to urban households.</p>
+                    <div class="d-flex gap-3 fs-4 mt-4 social-links">
+                        <a href="#" class="text-secondary"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Produce Categories</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-secondary">Leafy Greens</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-secondary">Culinary Herbs</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Main Links</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-secondary">Home</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-decoration-none text-secondary">Services</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-secondary">Produce</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-decoration-none text-secondary">Pricing</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none text-secondary">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Stay Updated</h5>
+                    <div class="glass-card p-2 d-flex">
+                        <input type="email" class="form-control bg-transparent border-0 text-white shadow-none"
+                            placeholder="Email Address">
+                        <button class="btn btn-primary-custom ms-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 pt-5 text-secondary border-top border-color">
+                <p>&copy; 2026 HarvestRise Hydroponics. Freshly Harvested. Locally Grown. Delivered Weekly.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
