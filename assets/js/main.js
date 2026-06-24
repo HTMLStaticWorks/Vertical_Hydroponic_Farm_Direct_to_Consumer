@@ -153,6 +153,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Pricing Billing Toggle
+    const billingSwitch = document.getElementById('billingSwitch');
+    if (billingSwitch) {
+        billingSwitch.addEventListener('change', (e) => {
+            const isWeekly = e.target.checked;
+            const priceVals = document.querySelectorAll('.price-val');
+            const pricePeriods = document.querySelectorAll('.price-period');
+            
+            priceVals.forEach(val => {
+                if (isWeekly) {
+                    val.textContent = val.getAttribute('data-weekly');
+                } else {
+                    val.textContent = val.getAttribute('data-monthly');
+                }
+            });
+            
+            pricePeriods.forEach(period => {
+                if (isWeekly) {
+                    period.textContent = '/wk';
+                } else {
+                    period.textContent = '/mo';
+                }
+            });
+        });
+    }
+
     // Back to Top
     let backToTopButton = document.getElementById('back-to-top');
     if (!backToTopButton) {

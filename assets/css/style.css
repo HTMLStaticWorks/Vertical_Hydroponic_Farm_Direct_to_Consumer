@@ -142,10 +142,15 @@ h4, h5, h6, .h4, .h5, .h6 {
     font-weight: 600;
 }
 
-.navbar-custom .nav-toggle-btn {
+.nav-toggle-btn {
     width: 56px !important;
     min-width: 56px !important;
+    height: 40px !important;
+    min-height: 40px !important;
     padding: 8px 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     gap: 0;
 }
 
@@ -352,6 +357,11 @@ h4, h5, h6, .h4, .h5, .h6 {
     text-align: right;
 }
 
+.hero-section-alt {
+    position: relative;
+    overflow: hidden;
+}
+
 .hero-glow {
     position: absolute;
     top: -10%;
@@ -498,7 +508,7 @@ h4, h5, h6, .h4, .h5, .h6 {
     top: 0;
     left: 0;
     padding: 30px;
-    z-index: 1000;
+    z-index: 1050;
     transition: var(--transition);
 }
 
@@ -645,13 +655,13 @@ h4, h5, h6, .h4, .h5, .h6 {
 }
 
 /* Social Links Hover */
-.social-links a {
+footer .social-links a.text-secondary {
     transition: all 0.3s ease;
 }
 
-.social-links a:hover {
+footer .social-links a.text-secondary:hover {
     color: var(--primary-accent) !important;
-    transform: translateY(-5px);
+    transform: translateY(-5px) !important;
 }
 
 /* Footer Styles: Link Hover & Spacing Fix */
@@ -671,14 +681,17 @@ footer p {
 
 footer a.text-secondary {
     transition: var(--transition);
+    display: inline-block;
 }
 
 footer a.text-secondary:hover {
     color: var(--primary-accent) !important;
+    transform: translateX(5px);
 }
 
 body.light-theme footer a.text-secondary:hover {
     color: var(--secondary-accent) !important;
+    transform: translateX(5px);
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
