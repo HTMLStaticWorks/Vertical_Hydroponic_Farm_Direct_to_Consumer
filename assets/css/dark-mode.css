@@ -115,17 +115,17 @@ body.light-theme .table-glass th.text-secondary {
 /* Form Controls */
 body.light-theme .form-control,
 body.light-theme .form-select {
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.2) !important;
     color: #0F172A !important;
 }
 
 body.light-theme .form-control::placeholder {
-    color: #94a3b8;
+    color: #64748b !important;
 }
 
 body.light-theme .input-group-text {
-    border-color: rgba(0, 0, 0, 0.1);
-    color: #64748b;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+    color: #475569 !important;
 }
 
 /* Auth Pages Specific */

@@ -52,28 +52,28 @@ body {
 /* Typography Rules */
 h1, .h1 {
     font-family: 'Poppins', sans-serif !important;
-    font-size: clamp(4.5rem, 8vw, 6rem) !important;
+    font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
     font-weight: 580 !important;
     letter-spacing: -0.02em;
 }
 
 .display-2,
 .display-3 {
-    font-size: clamp(1.75rem, 5vw, 3.8rem) !important;
+    font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
     line-height: 1.15 !important;
     font-weight: 580 !important;
 }
 
 h2, .h2 {
     font-family: 'Poppins', sans-serif !important;
-    font-size: clamp(3rem, 6vw, 4.5rem) !important;
+    font-size: clamp(2rem, 4vw, 2.75rem) !important;
     font-weight: 540 !important;
     letter-spacing: -0.02em;
 }
 
 h3, .h3 {
     font-family: 'Poppins', sans-serif !important;
-    font-size: clamp(2rem, 4vw, 3rem) !important;
+    font-size: clamp(1.5rem, 3vw, 2rem) !important;
     font-weight: 520 !important;
     letter-spacing: -0.01em;
 }
@@ -737,7 +737,7 @@ u {
 
 /* Unique layout helper classes */
 .section-title {
-    font-size: clamp(2rem, 4vw, 2.75rem) !important;
+    font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
     line-height: 1.25 !important;
 }
 
@@ -754,7 +754,7 @@ u {
 }
 
 .hero-title {
-    font-size: clamp(1.75rem, 5vw, 3.8rem) !important;
+    font-size: clamp(2rem, 5vw, 3rem) !important;
     line-height: 1.15 !important;
     font-weight: 580 !important;
 }

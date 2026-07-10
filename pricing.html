@@ -52,6 +52,10 @@
         body:not(.light-theme) .badge.bg-primary-accent.text-dark {
             color: #ffffff !important;
         }
+        
+        body:not(.light-theme) .visa-logo {
+            filter: brightness(0) invert(1);
+        }
 
         @media (width: 1024px) {
             section.bg-secondary-bg .row.g-4 > .col-sm-6 {
@@ -93,9 +97,6 @@
                         title="Dashboard">
                         <i class="bi bi-grid-fill"></i>
                     </a>
-                    <a href="login.html" class="btn btn-outline-custom btn-sm d-flex align-items-center" title="Login">
-                        Login
-                    </a>
                     <div class="d-flex gap-2">
                         <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="theme-toggle" title="Toggle Theme">
                             <i class="bi bi-moon-stars"></i>
@@ -104,6 +105,9 @@
                             RTL
                         </button>
                     </div>
+                    <a href="login.html" class="btn btn-primary-custom btn-sm d-flex align-items-center" title="Login">
+                        Login
+                    </a>
                 </div>
             </div>
         </div>
@@ -269,7 +273,7 @@
                         height="25" alt="Stripe">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" height="25" alt="PayPal">
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='24' viewBox='0 0 72 24'%3E%3Ctext x='0' y='18' font-family='Arial, Helvetica, sans-serif' font-size='18' font-weight='700' fill='%231A1F71'%3EVISA%3C/text%3E%3C/svg%3E"
-                        height="20" alt="Visa">
+                        height="20" alt="Visa" class="visa-logo">
                 </div>
             </div>
         </div>

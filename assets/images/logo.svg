@@ -1,19 +1,19 @@
 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Icon: Leaf Tower with Droplet -->
-    <!-- Droplet Outline -->
-    <path d="M25 7C25 7 37 19 37 27C37 33.6274 31.6274 39 25 39C18.3726 39 13 33.6274 13 27C13 19 25 7 25 7Z" fill="url(#droplet-grad)" opacity="0.15"/>
-    <path d="M25 5C25 5 39 19 39 27C39 34.732 32.732 41 25 41C17.268 41 11 34.732 11 27C11 19 25 5 25 5Z" stroke="url(#droplet-grad)" stroke-width="2" stroke-linejoin="round"/>
+    <!-- Droplet background and outline -->
+    <path d="M25 5 C 25 15, 40 20, 40 30 A 15 15 0 0 1 10 30 C 10 20, 25 15, 25 5 Z" fill="#F0FDF4" stroke="url(#droplet-grad)" stroke-width="2.5" stroke-linejoin="round"/>
     
-    <!-- Leaf Tower -->
-    <path d="M25 34C22 31 18 31 18 27C18 24 25 22 25 22C25 22 32 24 32 27C32 31 28 31 25 34Z" fill="#15803D"/>
-    <path d="M25 26C22.5 23.5 19.5 23.5 19.5 20C19.5 17.5 25 16 25 16C25 16 30.5 17.5 30.5 20C30.5 23.5 27.5 23.5 25 26Z" fill="#22C55E"/>
-    <path d="M25 17C23.5 15 21 15 21 12C21 10 25 9 25 9C25 9 29 10 29 12C29 15 26.5 15 25 17Z" fill="#84CC16"/>
+    <!-- Top circle (Sun/Seed) -->
+    <circle cx="25" cy="16.5" r="3.5" fill="#84CC16"/>
     
-    <path d="M25 9V35" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+    <!-- Left Stem/Leaf (Dark Green/Navy) -->
+    <path d="M23.5 21.5H16.5A 2.5 2.5 0 0 0 14 24.0V27.5A 9.5 9.5 0 0 0 23.5 37.0V21.5Z" fill="#064E3B"/>
+    
+    <!-- Right Stem/Leaf (Vibrant Green) -->
+    <path d="M26.5 21.5H33.5A 2.5 2.5 0 0 1 36 24.0V27.5A 9.5 9.5 0 0 1 26.5 37.0V21.5Z" fill="#22C55E"/>
     
     <defs>
-        <linearGradient id="droplet-grad" x1="25" y1="5" x2="25" y2="41" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#22C55E"/>
+        <linearGradient id="droplet-grad" x1="25" y1="5" x2="25" y2="45" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#4ADE80"/>
             <stop offset="1" stop-color="#15803D"/>
         </linearGradient>
     </defs>
